@@ -12,134 +12,201 @@ body {
 
 header {
     background: #E31C23;
-    padding: 15px 30px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 800;
     font-style: italic;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.delivering-to {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.chevron {
+    font-size: 10px;
+    margin-left: 3px;
 }
 
 .search-container {
-    flex: 1;
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 380px;
+    flex: 0 1 500px;
 }
 
-.search-container input {
-    width: 550px;
-    padding: 12px 20px;
+.search-box {
+    position: relative;
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
     border: none;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    cursor: pointer;
 }
 
 .header-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
-.header-links span {
+.link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    font-size: 14px;
+}
+
+.link-item .icon {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.link-item span {
+    font-size: 11px;
+    font-weight: 600;
 }
 
 /* NAVBAR */
 
 nav {
-    background: #F5F5F5;
-    padding: 15px 30px;
+    background: white;
+    padding: 0 50px;
     display: flex;
-    gap: 70px;
-    border-bottom: 1px solid #DDD;
-    box-shadow: #333;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+    z-index: 1000;
 }
 
-nav a {
+.nav-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-item a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    display: block;
+    position: relative;
+}
 
+/* Hover Indicator Line */
+.nav-item:hover > a::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #E31C23;
+}
+
+/* Red text on hover */
+.nav-item:hover > a {
+    color: #E31C23;
 }
 
 .new-badge {
     background: #E31C23;
     color: white;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    margin-left: 8px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
 }
 
 /* DROPDOWN */
 
-.Cake-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* dropdown hidden */
-
-.Cakes-dropdown-items {
+.dropdown-menu {
     position: absolute;
-    top: 40px;
-    left: 0;
-
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 900px;
-    padding: 30px;
-
     background: white;
-
     display: none;
-
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-
-    box-shadow: 0 10px 20px #0000001a;
-
-    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 1001;
+    border-top: 1px solid #eee;
 }
 
-/* show dropdown */
-
-.Cake-dropdown:hover .Cakes-dropdown-items {
+.nav-item:hover .dropdown-menu {
     display: grid;
 }
 
-/* columns */
-
-.column,
-.column1,
-.column2 {
-    display: flex;
-    flex-direction: column;
+.column {
+    padding: 25px;
 }
 
-.Cakes-dropdown-items h4 {
-    margin-bottom: 12px;
-    font-weight: bold;
+.beige-bg {
+    background: #fff8f5;
 }
 
-.Cakes-dropdown-items a {
-    text-decoration: none;
+.column h4 {
+    font-size: 14px;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-.Cakes-dropdown-items a:hover {
-    color: #ff4081;
+.star {
+    color: #ffcc00;
+    margin-right: 5px;
 }
+
+.column a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.column a:hover {
+    color: #E31C23;
+}
+
+
 
 /* HERO SECTION */
 

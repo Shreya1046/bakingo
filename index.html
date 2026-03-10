@@ -8,63 +8,104 @@
 </head>
 <body>
     <header>
-        <div class="logo">bakingo</div>
-        <div class="search-container">
-            <input type="text" placeholder="🔍 Search For Cakes, Occasion, Flavour And More...">
+        <div class="header-left">
+            <div class="logo">bakingo</div>
+            <div class="delivering-to">
+                <span class="loc-icon">📍</span> Delivering To <span class="chevron">▼</span>
+            </div>
         </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Search For Cakes, Occasion, Flavour And More...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
         <div class="header-links">
-            <span onclick="showAlert('Track Order')">📍 Track Order</span>
-            <span onclick="showAlert('Cart')">🛒 Cart</span>
-            <span onclick="showAlert('Login')">👤 Login/Signup</span>
+            <div class="link-item">
+                <div class="icon">％</div>
+                <span>Track Order</span>
+            </div>
+            <div class="link-item">
+                <div class="icon">🛒</div>
+                <span>Cart</span>
+            </div>
+            <div class="link-item">
+                <div class="icon">👤</div>
+                <span>Login/Signup</span>
+            </div>
         </div>
     </header>
 
     <nav>
-        <a href="#">Cakes</a>                               
-        <div class="Cake-dropdown">
-
-
-            <div class="Cakes-dropdown-items">
-
+        <div class="nav-item">
+            <a href="#">Cakes</a>
+            <div class="dropdown-menu">
                 <div class="column">
-                    <h4>Trending Cakes</h4>
+                    <h4><span class="star">★</span> Trending Cakes</h4>
                     <a href="#">Cricket Cakes</a>
                     <a href="#">Fire Cakes</a>
                     <a href="#">Ribbon Cakes</a>
+                    <a href="#">Fresh Drops</a>
+                    <a href="#">Gourmet Cakes</a>
+                    <a href="#">Bento Cakes</a>
+                    <a href="#">Camera Cakes</a>
+                    <a href="#">Anime Cakes</a>
+                    <a href="#">Labubu Cakes</a>
+                    <a href="#">Pinata Cakes</a>
+                    <a href="#">Drip Cakes</a>
                 </div>
 
-                <div class="column">
-                    <h4>By Type</h4>
+                <div class="column beige-bg">
+                    <h4><span class="star">★</span> By Type</h4>
                     <a href="#">Bestsellers</a>
                     <a href="#">Eggless Cakes</a>
                     <a href="#">Photo Cakes</a>
+                    <a href="#">Cheese Cakes</a>
+                    <a href="#">Half Cakes</a>
+                    <a href="#">Heart Shaped Cakes</a>
+                    <a href="#">Rose Cakes</a>
+                    <a href="#">All Cakes</a>
                 </div>
 
                 <div class="column">
-                    <h4>By Flavours</h4>
+                    <h4><span class="star">★</span> By Flavours</h4>
                     <a href="#">Chocolate Cakes</a>
+                    <a href="#">Butterscotch Cakes</a>
                     <a href="#">Strawberry Cakes</a>
                     <a href="#">Pineapple Cakes</a>
+                    <a href="#">Kit Kat Cakes</a>
+                    <a href="#">Black Forest Cakes</a>
+                    <a href="#">Red Velvet Cakes</a>
+                    <a href="#">Vanilla Cakes</a>
+                    <a href="#">Fruit Cakes</a>
+                    <a href="#">Blueberry Cakes</a>
                 </div>
 
-                <div class="column">
-                    <h4>Delivery Cities</h4>
-                    <a href="#">Bangalore</a>
-                    <a href="#">Delhi</a>
-                    <a href="#">Mumbai</a>
+                <div class="column beige-bg">
+                    <h4><span class="star">★</span> Delivery Cities</h4>
+                    <a href="#">Cakes To Bangalore</a>
+                    <a href="#">Cakes To Delhi</a>
+                    <a href="#">Cakes To Gurgaon</a>
+                    <a href="#">Cakes To Hyderabad</a>
+                    <a href="#">Cakes To Noida</a>
+                    <a href="#">Cakes To Mumbai</a>
+                    <a href="#">Cakes To Jaipur</a>
+                    <a href="#">Cakes To Pune</a>
+                    <a href="#">Cakes To Chandigarh</a>
+                    <a href="#">Cakes To Chennai</a>
                 </div>
-
             </div>
-
         </div>
-        <a onclick="showAlert('Theme Cakes')">Theme Cakes</a>
-        <a onclick="showAlert('By Relationship')">By Relationship</a>
-        <a onclick="showAlert('Desserts')">Desserts</a>
-        <a onclick="showAlert('Birthday')">Birthday</a>
-        <a onclick="showAlert('Hampers')">Hampers <span class="new-badge">NEW</span></a>
-        <a onclick="showAlert('Anniversary')">Anniversary</a>
-        <a onclick="showAlert('Occasions')">Occasions</a>
-        <a onclick="showAlert('Customized')">Customized Cakes</a>
+        <div class="nav-item"><a href="#">Theme Cakes</a></div>
+        <div class="nav-item"><a href="#">By Relationship</a></div>
+        <div class="nav-item"><a href="#">Desserts</a></div>
+        <div class="nav-item"><a href="#">Birthday</a></div>
+        <div class="nav-item"><a href="#">Hampers <span class="new-badge">New</span></a></div>
+        <div class="nav-item"><a href="#">Anniversary</a></div>
+        <div class="nav-item"><a href="#">Occasions</a></div>
+        <div class="nav-item"><a href="#">Customized Cakes</a></div>
     </nav>
 
     <!-- Hero Section -->
