@@ -1,0 +1,152 @@
+/* NAVBAR GLOBAL STYLES */
+nav {
+    background: white;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+/* Hover Indicator Line */
+.nav-item:hover>a::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #E31C23;
+}
+
+.nav-item:hover>a {
+    color: #E31C23;
+}
+
+.new-badge {
+    background: #E31C23;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+/* DROPDOWN CORE */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 900px;
+    background: white;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    border-top: 1px solid #eee;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+}
+
+/* Standard small dropdown for items like Desserts/Birthday */
+.dropdown-small {
+    width: 220px;
+    grid-template-columns: 1fr;
+    padding: 0;
+}
+
+.dropdown-small .column {
+    padding: 10px 0;
+}
+
+.dropdown-small a {
+    padding: 6px 25px;
+    font-weight: 600; 
+    font-size: 12.5px; /* Slightly smaller to reduce height */
+    color: #333;
+    padding-left: 25px !important; 
+}
+
+/* Medium dropdown for 2-column layouts */
+.dropdown-medium {
+    width: 500px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* CSS for 5-column wide dropdown (like Theme Cakes) */
+.theme-dropdown {
+    width: 1100px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.no-header {
+    padding-top: 61px; /* Aligns links with columns that have headers (h3 height + margin) */
+}
+
+.nav-item:hover .dropdown-menu {
+    display: grid;
+}
+
+.column {
+    padding: 30px 25px;
+}
+
+.beige-bg {
+    background: #ffe9d9;
+}
+
+.column h3 {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #ffcc00;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.column a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 9px;
+    padding-left: 23px;
+    display: block;
+    transition: color 0.3s, padding-left 0.3s;
+    line-height: 1.4;
+}
+
+/* Simple list style for smaller dropdowns */
+.dropdown-small a {
+    padding: 10px 25px;
+}
+
+.column a:hover {
+    color: #E31C23;
+    padding-left: 28px;
+}

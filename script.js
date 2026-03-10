@@ -1,3 +1,13 @@
+// Load Navigation Component
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-nav').innerHTML = data;
+        })
+        .catch(err => console.error('Error loading navigation:', err));
+});
+
 let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel-item');
 const totalSlides = slides.length;
