@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('main-nav').innerHTML = data;
         })
         .catch(err => console.error('Error loading navigation:', err));
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-footer').innerHTML = data;
+        })
+        .catch(err => console.error('Error loading footer:', err));
 });
 
 let currentIndex = 0;
