@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - Bakingo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="category.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo"><i>bakingo</i></div>
+            <div class="delivering-to">
+                <span class="loc-icon">📍</span> Delivering To <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-icons">
+                <span>🔍</span>
+                <span>👤</span>
+                <span>🛒</span>
+            </div>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <!-- Loaded from nav.html via script -->
+    </nav>
+
+    <main class="category-page">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb" id="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <span id="breadcrumb-category">Category</span>
+        </div>
+
+        <!-- Category Title -->
+        <h1 class="category-title" id="category-title">Category Name</h1>
+
+        <!-- Sort/Filter Bar -->
+        <div class="category-toolbar">
+            <p class="product-count" id="product-count">0 Products</p>
+            <div class="sort-options">
+                <label>Sort by:</label>
+                <select id="sort-select">
+                    <option value="relevance">Relevance</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected here by category.js -->
+        </div>
+
+        <!-- No Products Message -->
+        <div class="no-products" id="no-products" style="display:none;">
+            <div class="no-products-icon">🎂</div>
+            <h2>No products found</h2>
+            <p>We couldn't find any products in this category. Try browsing our other delicious options!</p>
+            <a href="index.html" class="back-home-btn">Back to Home</a>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <!-- Loaded from footer.html via script -->
+    </footer>
+
+    <script src="data/products.js"></script>
+    <script src="category.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
