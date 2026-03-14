@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Bakingo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo" onclick="window.location.href='index.html'"><i>bakingo</i></div>
+            <div class="delivering-to">
+                <span class="loc-icon">📍</span> Delivering To <span class="chevron">▼</span>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Search For Cakes, Occasion, Flavour And More...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="header-links">
+            <div class="link-item">
+                <div class="icon">％</div>
+                <span>Track Order</span>
+            </div>
+            <div class="link-item">
+                <div class="icon">🛒</div>
+                <span>Cart</span>
+            </div>
+            <div class="link-item">
+                <div class="icon">👤</div>
+                <span>Login/Signup</span>
+            </div>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <!-- Loaded from nav.html via script -->
+    </nav>
+
+    <!-- Product Display Area -->
+    <main class="product-main-container">
+        <div id="product-wrapper" class="product-wrapper">
+            <!-- Dynamically populated product details -->
+        </div>
+        <div id="no-product-error" style="display: none; padding: 100px; text-align: center; font-size: 24px;">
+            Product not found. <br><br>
+            <a href="index.html" style="color: #E31C23;">Return Home</a>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <!-- Loaded from footer.html via script -->
+    </footer>
+
+    <script src="data/products.js"></script>
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

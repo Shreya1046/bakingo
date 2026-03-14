@@ -106,6 +106,11 @@ function renderProducts(productList) {
             wishBtn.textContent = wishBtn.textContent === '♡' ? '❤️' : '♡';
         });
 
+        // Redirect to product details
+        card.addEventListener('click', () => {
+            window.location.href = `product.html?name=${encodeURIComponent(product.name)}`;
+        });
+
         grid.appendChild(card);
     });
 }

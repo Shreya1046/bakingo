@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
             `;
             
             card.addEventListener('click', () => {
-                alert(`Viewing ${cake.name}`);
+                window.location.href = `product.html?name=${encodeURIComponent(cake.name)}`;
             });
             
             container.appendChild(card);
