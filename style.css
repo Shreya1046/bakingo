@@ -180,3 +180,102 @@ header {
 .carousel-arrow:hover {
     background: #cecdcdcc;
 }
+
+/* LANDING MENU SECTION */
+.landing-menu {
+    background-color: #fce5e9; /* Soft pink background */
+    padding: 60px 40px 80px;
+    position: relative;
+    text-align: center;
+}
+
+/* Scalloped top edge overlapping the carousel (Shallow U Shape) */
+.landing-menu::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: radial-gradient(circle at 50% -50px, transparent 70px, #fce5e9 71px);
+    background-size: 100px 25px;
+    z-index: 10;
+}
+
+/* CAROUSEL DOTS */
+.carousel-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.carousel-dots .dot.active {
+    background-color: #E31C23;
+}
+
+.menu-heading {
+    margin-bottom: 40px;
+}
+
+.menu-heading h2 {
+    color: #E31C23;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.menu-heading p {
+    color: #666;
+    font-size: 18px;
+}
+
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.menu-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.menu-card span {
+    color: #000;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
