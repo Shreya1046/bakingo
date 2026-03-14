@@ -3,8 +3,8 @@ nav {
     background: white;
     padding: 0 50px;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; /* Centered */
+    gap: 40px;
     border-bottom: 2px solid #f0f0f0;
     position: relative;
     z-index: 1000;
@@ -43,11 +43,13 @@ nav {
 .new-badge {
     background: #E31C23;
     color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 9px;
+    font-weight: 800;
     text-transform: uppercase;
-    vertical-align: middle;
+    vertical-align: super;
+    margin-left: 4px;
 }
 
 /* DROPDOWN CORE */

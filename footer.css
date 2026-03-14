@@ -15,6 +15,40 @@ footer::before {
     height: 25px;
     background: radial-gradient(circle at 100px 212.5px, #ffe9d9 212.5px, transparent 213px);
     background-size: 200px 25px;
+    z-index: 1; /* Ensure scallops overlap the accordion below */
+}
+
+/* Global SEO Accordion above footer */
+.global-seo-accordion {
+    position: absolute;
+    bottom: 100%; /* Sits precisely on the top edge of the footer */
+    left: 0;
+    width: 100%;
+    background-color: #fff5f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 70px; /* Pads around content */
+    padding-bottom: 40px; /* Extra padding to hide behind 24px scallops */
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 0; /* Stays beneath the scallops */
+}
+
+.global-seo-accordion .seo-title {
+    margin: 0;
+    text-align: center;
+}
+
+.global-seo-accordion .chevron {
+    position: absolute;
+    right: 70px;
+    display: flex;
+    align-items: center;
+    color: #000;
 }
 
 .footer-top {

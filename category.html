@@ -12,17 +12,34 @@
 </head>
 <body>
     <header>
-        <div class="header-left">
-            <div class="logo"><i>bakingo</i></div>
-            <div class="delivering-to">
-                <span class="loc-icon">📍</span> Delivering To <span class="chevron">▼</span>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="https://www.bakingo.com/static/media/logo.8d2146f3.svg" alt="Bakingo" id="bakingo-logo">
+                </div>
+                <div class="delivering-to">
+                    <span class="loc-icon">📍</span> Delivering To <span class="chevron">▼</span>
+                </div>
             </div>
-        </div>
-        <div class="header-right">
-            <div class="header-icons">
-                <span>🔍</span>
-                <span>👤</span>
-                <span>🛒</span>
+
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search For Cakes, Occasion, Flavour And More...">
+            </div>
+
+            <div class="header-right">
+                <div class="header-icon-item">
+                    <div class="icon-img">%</div>
+                    <span class="label">Track Order</span>
+                </div>
+                <div class="header-icon-item">
+                    <div class="icon-img">🛒</div>
+                    <span class="label">Cart</span>
+                </div>
+                <div class="header-icon-item">
+                    <div class="icon-img">👤</div>
+                    <span class="label">Login/Signup</span>
+                </div>
             </div>
         </div>
     </header>
@@ -32,25 +49,20 @@
     </nav>
 
     <main class="category-page">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb" id="breadcrumb">
-            <a href="index.html">Home</a> <span>/</span> <span id="breadcrumb-category">Category</span>
-        </div>
-
         <!-- Category Title -->
-        <h1 class="category-title" id="category-title">Category Name</h1>
+        <h1 class="category-title" id="category-title">Cricket Cakes</h1>
 
         <!-- Sort/Filter Bar -->
         <div class="category-toolbar">
-            <p class="product-count" id="product-count">0 Products</p>
-            <div class="sort-options">
-                <label>Sort by:</label>
-                <select id="sort-select">
-                    <option value="relevance">Relevance</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="rating">Rating</option>
-                </select>
+            <button class="sort-btn" id="sort-trigger">
+                Sort ↓↑
+            </button>
+            
+            <div class="sort-dropdown" id="sort-dropdown" style="display:none;">
+                <div class="sort-option" data-value="relevance">Relevance</div>
+                <div class="sort-option" data-value="price-low">Price: Low to High</div>
+                <div class="sort-option" data-value="price-high">Price: High to Low</div>
+                <div class="sort-option" data-value="rating">Rating</div>
             </div>
         </div>
 

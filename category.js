@@ -4,23 +4,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Get category from URL
     const params = new URLSearchParams(window.location.search);
-    const category = params.get('category');
-
-    if (!category) {
-        showNoProducts();
-        return;
-    }
-
-    // Convert slug to display name: "cricket-cakes" → "Cricket Cakes"
-    const categoryName = category
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-
-    // Update page title and breadcrumb
-    document.title = categoryName + ' - Bakingo';
-    document.getElementById('category-title').textContent = categoryName;
-    document.getElementById('breadcrumb-category').textContent = categoryName;
+    const category = params.get('category') || 'cricket-cakes'; // Default for demo
 
     // Filter products by category
     const filtered = products.filter(p => p.category === category);
@@ -30,29 +14,59 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    // Update product count
-    document.getElementById('product-count').textContent = filtered.length + ' Product' + (filtered.length > 1 ? 's' : '');
+    // Convert slug to display name
+    const categoryName = category
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
 
-    // Render product cards
+    document.title = categoryName + ' - Bakingo';
+    document.getElementById('category-title').textContent = categoryName;
+
+    // Initial render
     renderProducts(filtered);
 
-    // Sort functionality
-    document.getElementById('sort-select').addEventListener('change', function () {
-        let sorted = [...filtered];
-        switch (this.value) {
-            case 'price-low':
-                sorted.sort((a, b) => a.price - b.price);
-                break;
-            case 'price-high':
-                sorted.sort((a, b) => b.price - a.price);
-                break;
-            case 'rating':
-                sorted.sort((a, b) => b.rating - a.rating);
-                break;
-            default:
-                break; // relevance = original order
+    // Sort Dropdown Toggle
+    const sortBtn = document.getElementById('sort-trigger');
+    const sortDropdown = document.getElementById('sort-dropdown');
+
+    sortBtn.addEventListener('click', () => {
+        const isVisible = sortDropdown.style.display === 'block';
+        sortDropdown.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', (e) => {
+        if (!sortBtn.contains(e.target) && !sortDropdown.contains(e.target)) {
+            sortDropdown.style.display = 'none';
         }
-        renderProducts(sorted);
+    });
+
+    // Sort Selection Logic
+    const sortOptions = document.querySelectorAll('.sort-option');
+    sortOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            let sorted = [...filtered];
+            
+            switch (value) {
+                case 'price-low':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    sorted.sort((a, b) => b.rating - a.rating);
+                    break;
+                default:
+                    break; 
+            }
+            
+            renderProducts(sorted);
+            sortDropdown.style.display = 'none';
+            sortBtn.innerHTML = `Sort: ${this.textContent} ↓↑`;
+        });
     });
 });
 
@@ -61,28 +75,37 @@ function renderProducts(productList) {
     grid.innerHTML = '';
 
     productList.forEach(product => {
-        const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
-            <div class="card-image">
+            <div class="card-image-wrapper">
+                ${product.isVeg ? '<div class="veg-icon"></div>' : ''}
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <button class="wishlist-icon">♡</button>
             </div>
             <div class="card-body">
                 <div class="card-name">${product.name}</div>
-                <div class="card-weight">${product.weight}</div>
                 <div class="card-pricing">
                     <span class="card-price">₹${product.price}</span>
-                    <span class="card-original-price">₹${product.originalPrice}</span>
-                    <span class="card-discount">${discount}% OFF</span>
                 </div>
-                <div class="card-rating">
-                    <span class="star">★</span> ${product.rating}
+                <div class="card-rating-row">
+                    <div class="card-rating">
+                        ${product.rating} <span class="star">★</span>
+                    </div>
+                    <div class="card-reviews">
+                        (${product.reviews} Reviews)
+                    </div>
                 </div>
             </div>
-            <button class="add-btn">ADD TO CART</button>
         `;
+        
+        // Wishlist toggle demo
+        const wishBtn = card.querySelector('.wishlist-icon');
+        wishBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            wishBtn.textContent = wishBtn.textContent === '♡' ? '❤️' : '♡';
+        });
+
         grid.appendChild(card);
     });
 }
