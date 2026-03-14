@@ -116,10 +116,71 @@
         </div>
     </section>
 
+    <!-- India Loves Section -->
+    <section class="india-loves">
+        <div class="india-loves-header">
+            <span class="star-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#ffc107"/>
+                </svg>
+            </span>
+            <h2>India Loves</h2>
+        </div>
+        <p class="subtitle">Bestsellers from across the country</p>
+        
+        <div class="bestsellers-wrapper">
+            <div class="bestsellers-grid" id="bestsellers-container">
+                <!-- Data populated via JS script -->
+            </div>
+        </div>
+        
+        <div class="view-all-container">
+            <a href="category.html?category=bestsellers" class="view-all-btn">VIEW ALL</a>
+        </div>
+    </section>
+
+    <!-- Our Promise Section -->
+    <section class="our-promise">
+        <!-- Background Blobs -->
+        <div class="promise-blob blob-left"></div>
+        <div class="promise-blob blob-right"></div>
+        
+        <div class="promise-content">
+            <div class="promise-heading">
+                <h2>Our Promise</h2>
+                <p>There's no secret spell—only honest, hard work!</p>
+            </div>
+            
+            <div class="promise-grid">
+                <div class="promise-card">
+                    <img src="assests/icon_truck.svg" alt="On-Time Delivery" class="promise-img">
+                    <h3>ON-TIME DELIVERY</h3>
+                    <p>Because no one likes late surprises.</p>
+                </div>
+                <div class="promise-card">
+                    <img src="assests/icon_cake.svg" alt="500+ Designs" class="promise-img">
+                    <h3>500+ DESIGNS</h3>
+                    <p>Wishes come in all shapes and sizes.</p>
+                </div>
+                <div class="promise-card">
+                    <img src="assests/icon_gift.svg" alt="2 CR+ Orders" class="promise-img">
+                    <h3>2 CR+ ORDERS</h3>
+                    <p>You can close your eyes and trust us.</p>
+                </div>
+                <div class="promise-card">
+                    <img src="assests/icon_slice.svg" alt="Baked Fresh" class="promise-img">
+                    <h3>BAKED FRESH</h3>
+                    <p>Spreading smiles, one slice at a time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="main-footer">
         <!-- Loaded from footer.html via script -->
     </footer>
 
+    <script src="data/products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

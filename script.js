@@ -50,3 +50,51 @@ function selectCake(cakeName) {
 function orderNow() {
     alert('🎉 Order now redirects to checkout page!');
 }
+
+/* =========================================
+   BESTSELLERS RENDERING (India Loves)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById('bestsellers-container');
+    if (container && typeof products !== 'undefined') {
+        const bestsellers = products.filter(p => p.category === 'bestsellers').slice(0, 6);
+        
+        bestsellers.forEach(cake => {
+            const reviewsCount = (cake.reviews >= 1000) ? (cake.reviews / 1000).toFixed(1) + 'K' : cake.reviews;
+            const discount = Math.round(((cake.originalPrice - cake.price) / cake.originalPrice) * 100);
+            
+            const card = document.createElement('div');
+            card.className = 'bestseller-card';
+            
+            let priceHtml = `<span class="current-price">₹${cake.price}</span>`;
+            if (cake.originalPrice > cake.price) {
+                priceHtml += `<span class="original-price">₹${cake.originalPrice}</span>`;
+                priceHtml += `<span class="discount">${discount}% OFF</span>`;
+            }
+
+            card.innerHTML = `
+                <div class="product-image">
+                    ${cake.isVeg ? `<div class="veg-icon"></div>` : ''}
+                    <img src="${cake.image}" alt="${cake.name}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name" title="${cake.name}">${cake.name}</h3>
+                    <div class="price-section">
+                        ${priceHtml}
+                        <span class="wishlist-icon">♡</span>
+                    </div>
+                    <div class="rating-section">
+                        <span class="rating">${cake.rating} ★</span>
+                        <span class="reviews">(${reviewsCount} Reviews)</span>
+                    </div>
+                </div>
+            `;
+            
+            card.addEventListener('click', () => {
+                alert(`Viewing ${cake.name}`);
+            });
+            
+            container.appendChild(card);
+        });
+    }
+});

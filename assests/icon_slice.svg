@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25 55 L75 38 V 62 L25 78 Z" fill="#ffb4c8"/>
+  <path d="M25 55 L75 38 L75 48 L25 65 Z" fill="#ffd1de"/>
+  <path d="M25 60 L75 43 L75 46 L25 63 Z" fill="#ffb4c8"/>
+  
+  <!-- Scallops / piped frosting on the back -->
+  <path d="M72 35 C 78 30 85 35 72 45 C 78 40 85 45 72 55 C 78 50 85 55 72 65 C 78 60 85 65 72 73" fill="#ffd1de" opacity="0.8"/>
+  
+  <!-- Frosting loop on top -->
+  <path d="M72 38 C 65 25 75 25 72 38" fill="#ffd1de"/>
+</svg>
